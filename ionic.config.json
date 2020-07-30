@@ -1,0 +1,7 @@
+{
+  "name": "cementbazar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
