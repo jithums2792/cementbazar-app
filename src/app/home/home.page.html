@@ -1,11 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  
+  <div class="container-fluid w-100 vh-100 bg-dark">
+    <div class="row align-items-center h-100">
+
+      <div class="col-12 mx-auto d-flex flex-column justify-content-center align-items-center">
+        <img src="../../assets/img/logo 2.png" width="75px" alt="">
+        <div class="col">
+          <span>CEMENTBAZAR</span>
+        </div>
+        <div class="col mt-5 d-flex flex-column">
+          <ion-button (click)="onClick()" color="primary" fill="solid" shape="round">
+            Click me
+          </ion-button>
+          <span>Already have account?</span>
+          <a [routerLink]="['/login']" >Login</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </ion-content>

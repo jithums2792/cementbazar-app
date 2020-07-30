@@ -37,9 +37,28 @@
               },
               {
                 "input": "src/global.scss"
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              },
+              {
+                "input": "src/assets/css/uikit.min.css"
               }
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/jquery/dist/jquery.min.js"
+              },
+              {
+                "input": "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              },
+              {
+                "input": "src/assets/js/uikit.min.js"
+              },
+              {
+                "input": "src/assets/js/uikit-icons.min.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
