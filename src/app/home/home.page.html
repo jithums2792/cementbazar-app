@@ -1,21 +1,20 @@
 <ion-content [fullscreen]="true">
-  <div class="container-fluid w-100 vh-100 bg-dark">
-    <div class="row align-items-center h-100">
+  <div class="container-fluid w-100 vh-100  home">
+    <div class="row align-items-center h-100 position-relative">
 
       <div class="col-12 mx-auto d-flex flex-column justify-content-center align-items-center">
-        <img src="../../assets/img/logo 2.png" width="75px" alt="">
-        <div class="col">
-          <span>CEMENTBAZAR</span>
-        </div>
-        <div class="col mt-5 d-flex flex-column">
-          <ion-button (click)="onClick()" color="primary" fill="solid" shape="round">
-            Click me
-          </ion-button>
-          <span>Already have account?</span>
-          <a [routerLink]="['/login']" >Login</a>
+        <img src="../../assets/img/logo 2.png" class="logo" width="75px" alt="">
+        <div class="col text-center">
+          <span class="log_text">CEMENTBAZAR</span>
         </div>
       </div>
-
+      <div class="col p-2 d-flex flex-column justify-content-center align-items-center position-absolute botton-nav text-center animate__animated animate__slideInUp">
+        <ion-button [routerLink]="['/dashboard']" expand="block" color="primary" fill="solid" shape="round">
+          Skip
+        </ion-button>
+        <span class="text-white text-13 my-2 ">Already have account?</span>
+        <a [routerLink]="['/login']" class="text-16 txt-primary">Login</a>
+      </div>
     </div>
   </div>
 </ion-content>

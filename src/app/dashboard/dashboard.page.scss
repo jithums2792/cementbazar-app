@@ -1,0 +1,18 @@
+ion-content {
+    --offset-top: 19px !important;
+}
+.uk-tab>.uk-active>a {
+    color: #039749 !important;
+    border-color: #039749 !important;
+}
+.uk-tab::before {
+    border: none !important
+}
+.card{
+    border-radius: 15px !important;
+    padding: 7px 0px;
+} 
+.img-custom{
+    border-radius: 15px 15px 0px 0px;
+    max-height: 130px;
+}

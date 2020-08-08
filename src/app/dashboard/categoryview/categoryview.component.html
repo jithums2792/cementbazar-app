@@ -1,0 +1,77 @@
+<ion-header>
+  <div class="container-fluid header dark">
+    <div class="row py-3">
+      <div class="col-12">
+        <span class="logo-text">CEMENT BAZAR</span>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content>
+  <div class="container-fluid">
+    <div class="row py-3">
+      <div class="col-12 mb-3 d-flex align-items-center justify-content-between">
+       <ion-button  uk-toggle="target: #modal-center" fill="clear">
+         <ion-icon slot="start" name="filter"></ion-icon>
+         Filter
+       </ion-button> 
+       <div class="position-relative">
+        <input type="text" placeholder="Search" class="pl-5 form-control search form-control-sm panda-light">
+        <ion-icon slot="start" name="search-outline" class="form-icon position-absolute"></ion-icon>
+      </div>
+      </div>
+      <div class="col-6" *ngFor="let item of products">
+        <app-productcard [data]="item"></app-productcard>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>
+<div id="modal-center" class="uk-flex-top" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+    <button class="uk-modal-close-default" type="button" uk-close></button> 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <span>Sort</span>
+        </div>
+        <div class="col-12 px-0 d-flex align-items-center justify-content-center flex-wrap">
+          <ion-button  shape="round">
+            <ion-icon slot="end" name="arrow-down-outline"></ion-icon>
+            Price
+          </ion-button>
+          <ion-button  shape="round">
+            <ion-icon slot="end" name="arrow-up-outline"></ion-icon>
+            Price
+          </ion-button>
+          <ion-button   shape="round">
+            Popular
+          </ion-button>
+        </div>
+        <div class="col-12">
+          <span>Offer</span>
+        </div>
+        <div class="col-12 px-0 d-flex align-items-center justify-content-center flex-wrap">
+          <ion-button   shape="round">
+            Buy More
+          </ion-button>
+          <ion-button   shape="round">
+            Specials
+          </ion-button>
+          <ion-button   shape="round">
+            Top items
+          </ion-button>
+        </div>
+        <div class="col-12 mt-5 d-flex align-items-center justify-content-center">
+          <ion-button  shape="round">
+            <ion-icon slot="start" name="arrow-forward-outline"></ion-icon>
+            PROCED
+          </ion-button>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
+

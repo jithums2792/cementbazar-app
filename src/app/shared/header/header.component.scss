@@ -1,0 +1,25 @@
+.logo-text {
+    color: yellow;
+    font-size: 22px;
+    font-weight: 400;
+}
+.form-control{
+    background-color: #F0F4F8 !important;
+    border: none !important;
+}
+.form-icon{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    font-size: 22px;
+    color: #A6BCD0;
+}
+.form-control::placeholder {
+    color: #A6BCD0;
+}
+.form-control:focus{
+    box-shadow: none !important;
+}
+.test{
+    border-radius: 0px 0px 18px 18px !important;
+}

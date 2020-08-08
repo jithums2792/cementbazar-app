@@ -43,6 +43,9 @@
               },
               {
                 "input": "src/assets/css/uikit.min.css"
+              },
+              {
+                "input": "node_modules/animate.css/animate.min.css"
               }
             ],
             "scripts": [

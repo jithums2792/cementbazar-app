@@ -1,0 +1,21 @@
+<div class="container-fluid dark test">
+  <div class="row py-4">
+    <div class="col-12">
+      <span class="logo-text">CEMENT BAZAR</span>
+    </div>
+    <div class="col-4 px-1">
+      <button class="btn-light w-100 btn btn-sm" type="button">Categories</button>
+      <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 1000">
+        <ul class="uk-nav uk-dropdown-nav">
+            <li *ngFor="let category of categoryList"><a href="#">{{category.name}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-8 px-1">
+      <div class="position-relative">
+        <input type="search" placeholder="Search" class="pl-5 form-control form-control-sm mb-3 panda-light">
+        <ion-icon slot="start" name="search-outline" class="form-icon position-absolute"></ion-icon>
+      </div>
+    </div>
+  </div>
+</div>

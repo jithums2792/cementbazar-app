@@ -1,0 +1,17 @@
+.price{
+    font-weight: 700;
+}
+.rating{
+    color: #F8DA48;
+}
+.card{
+    border-radius: 15px;
+}
+.card img {
+    border-radius: 15px 15px 0px 0px;
+}
+.custom{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

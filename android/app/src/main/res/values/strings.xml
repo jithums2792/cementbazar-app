@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">cementbazar</string>
+    <string name="title_activity_main">cementbazar</string>
+    <string name="package_name">app.cementbazar</string>
+    <string name="custom_url_scheme">app.cementbazar</string>
+</resources>

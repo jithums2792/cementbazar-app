@@ -1,9 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
+  <div class="container-fluid dark">
+    <div class="row py-3">
+      <div class="col-2">
+        <ion-button [routerLink]="['/home']" fill='clear'>
+          <ion-icon slot="start" name="chevron-back"></ion-icon>
+          Back
+        </ion-button>
+      </div>
+      <div class="col-10 text-center d-flex align-items-center justify-content-center">
+        <span class="logo-alt">CEMENT BAZAR</span>
+      </div>
+    </div>
+  </div>
 </ion-header>
-
 <ion-content>
-
+  <ion-router-outlet></ion-router-outlet>
 </ion-content>
+

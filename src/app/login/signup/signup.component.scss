@@ -1,0 +1,28 @@
+.btn-custom{
+    bottom: 20px;
+    min-height: 50px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+.custom-card{
+    border-radius: 0px 0px 25px 25px;
+    box-shadow: 1px 3px 15px -3px black;
+}
+.form-control{
+    min-height: 20px !important;
+    background-color: #F0F4F8 !important;
+    border: none !important;
+}
+.form-icon{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    font-size: 22px;
+    color: #A6BCD0;
+}
+.form-control::placeholder {
+    color: #A6BCD0;
+}
+.form-control:focus{
+    box-shadow: none !important;
+}

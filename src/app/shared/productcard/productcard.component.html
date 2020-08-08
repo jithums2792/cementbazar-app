@@ -1,0 +1,14 @@
+<div class="card" *ngIf="data">
+  <img (click)="openproduct()" [src]="data.featuredImage" class="img-fluid" alt="">
+  <div class="col">
+    <ion-icon class="rating"  name="star"></ion-icon>
+  </div>
+  <div class="col">
+    <label class="d-block w-100  custom">{{data.name}}</label>
+  </div>
+  <div class="col d-flex align-items-center justify-content-between">
+    <span class="price">₹ {{data.price}}/{{data.unit}}</span>
+    <span *ngIf="!flag"><ion-icon slot="start" name="heart-outline" (click)="addtowishlist()"></ion-icon></span>
+    <span *ngIf="flag"><ion-icon class="text-danger" slot="start" name="heart" (click)="removefromwishlist()"></ion-icon></span>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container-fluid w-100 vh-100 animate__animated animate__slideInDown">
+  <div class="row h-100">
+    <div class="col-12 text-center custom-card h-75 text-cente d-flex flex-column justify-content-center position-relative">
+      <form action="">
+        <span class="mb-3 txt-light">Reset Password</span>
+        <div class="position-relative">
+          <input type="text" placeholder="Email" class="pl-5 form-control mb-3 panda-light">
+          <ion-icon slot="start" name="mail-outline" class="form-icon position-absolute"></ion-icon>
+        </div>
+      </form>
+      <ion-button  class="btn-custom position-absolute w-75" shape="round">
+        <ion-icon slot="start" name="arrow-forward-outline"></ion-icon>
+        SEND RESET LINK
+      </ion-button>
+    </div>
+    <div class="col-12 h-25 d-flex justify-content-center">
+      <a [routerLink]="['/login/signin']" class="mt-4 pt-2 txt-light">Login</a>
+    </div>
+  </div>
+</div>

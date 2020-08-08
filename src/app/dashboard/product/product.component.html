@@ -1,0 +1,69 @@
+<ion-header>
+  <div class="container-fluid">
+    <div class="row my-3">
+      <div class="col-4">
+        <ion-button (click)="close()" fill="clear">
+          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </div>
+      <div class="col-8 d-flex align-items-center">
+        {{data.name}}
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <img [src]="data.featuredImage" class="product-img" alt="">
+      </div>
+      <div class="col-12">
+        <div uk-slider>
+          <ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-4@">
+              <li class="col-12 d-flex align-items-center justify-content-center" *ngFor="let itemx of data.gallery">
+                <img [src]="itemx" alt="">
+              </li>
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+      </div>
+      </div>
+      <div class="col-12">
+        <div class="custom-card py-3 d-flex align-items-center justify-content-between">
+          <span class="text-truncate col">{{data.name}}</span>
+          <div class=" col d-flex align-items-center justify-content-between">
+            <ion-icon name="remove-circle" class="btn-custom"></ion-icon>
+            <input type="number" class="custom-input" value="1">
+            <ion-icon name="add-circle" class="btn-custom"></ion-icon>
+          </div>
+          <span class="col">
+            Rs. 399
+          </span>
+        </div>
+      </div>
+      <div class="col-12 my-3">
+        <ion-button (click)="addtocart()" shape="round" fill="solid" expand="block">
+          <ion-icon name="cart-outline"></ion-icon>
+          Add to Cart
+        </ion-button>
+      </div>
+      <div class="col-12">
+        <span class="product-title">Description</span>
+        <p class="product-des">UltraTech Cement Limited is the largest manufacturer of cement in India and ranks among the world's leading cement makers. UltraTech's vision is to be 'The Leader' in Building Solutions. The company has a consolidated capacity* of 102.75 million tonnes per annum (MTPA) of grey cement.</p>
+      </div>
+      <div class="col-12">
+        <span class="product-title">Storage</span>
+        <p class="product-des">Store in warm and dry area.</p>
+      </div>
+      <div class="col-12">
+        <span class="product-title">Origin</span>
+        <p class="product-des">UltraTech has a dealer and retailer network of over 80,000 partners across the country, with a market reach of more than 80% Indian cities and towns.</p>
+      </div>
+      <div class="col-12">
+        <span class="product-title">Preparation & Usage</span>
+        <p class="product-des">Mix well with water and use.</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
