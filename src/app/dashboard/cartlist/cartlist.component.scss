@@ -1,0 +1,117 @@
+$white-color:#fff;
+$black-color:#000;
+$primary-color:#019747;
+$secondary-color:#F0F4F8;
+$ash-color:#A6BCD0;
+@mixin flex-centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    @include flex-centered;
+    flex-wrap: wrap;
+    height: 95px;
+    padding: 20px;
+    margin-bottom: -20px;
+    background-color: $white-color;
+    border-radius:0px 0px 30px 30px;
+    font-size: 1em;
+    &__title{
+        text-align: center;
+        width:100%;
+        color: $black-color;
+        font-size: 1.5em;
+    }
+}
+.content{
+    min-height: 100%;
+    display: flex;
+    align-content: flex-start!important;
+    flex-wrap: wrap;
+    padding:2em 15px;
+    background-color: $secondary-color;
+    position: relative;
+}
+.cartitem{
+    &:first-child{
+        margin-top: 20px;
+    }
+    margin-bottom: 15px;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0px 0px 10px #c4c4c4;
+    background-color: $white-color;
+    border-radius: 5px;
+    position: relative;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    &__delete{
+        position: absolute;
+        right: 0;
+        top: 0px;
+        height: 100%;
+        width:40px;
+        background-color: $ash-color;
+        border-radius: 0px 5px 5px 0px;
+        font-size: 1.1em;
+        cursor:pointer;
+        @include flex-centered;
+    }
+    &__img{
+        max-width: 40px;
+        max-height: 40px;
+        display: inline-block;
+    }
+    &__name{
+        color: $ash-color;
+        max-width: 100%;
+        display: inline-block;
+        margin: 0;
+        font-size: 0.8em;
+        padding: 0px 10px;
+        margin-bottom: 0;
+    }
+}
+.cartitem__qty{
+    @include flex-centered;
+    min-width: 130px;
+    flex-wrap: wrap;
+    margin-right: 25px;
+    label{
+        font-weight: 600;
+        color:$black-color;
+        font-size: .8em;
+        align-self: center!important;
+        width: 50px;
+        text-align: center;
+        display: block;
+        min-width: 100%;
+    }
+}
+.control-btn{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    @include flex-centered;
+    display: inline-block;
+    background-color: $white-color;
+    box-shadow: 0px 0px 2px #c4c4c4;
+    margin: 0px 4px;
+}
+.control-input{
+    @extend .control-btn;
+    margin: 0;
+    font-size: .5em;
+    border: none;
+    outline: none;
+}
+@media(min-width:410px){
+    .cartitem__qty{
+        margin-right: 30px;
+        position: absolute;
+        right: 10px;
+    }
+}

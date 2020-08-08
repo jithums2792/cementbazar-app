@@ -1,0 +1,86 @@
+$white-color:#fff;
+$black-color:#000;
+$primary-color:#019747;
+$secondary-color:#F0F4F8;
+$ash-color:#A6BCD0;
+@mixin flex-centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    @include flex-centered;
+    flex-wrap: wrap;
+    height: 95px;
+    padding: 20px;
+    margin-bottom: -20px;
+    background-color: $white-color;
+    border-radius:0px 0px 30px 30px;
+    font-size: 1em;
+    &__title{
+        text-align: center;
+        width:100%;
+        color: $black-color;
+        font-size: 1.5em;
+    }
+}
+.content{
+    min-height: 100%;
+    display: flex;
+    align-content: flex-start!important;
+    flex-wrap: wrap;
+    padding:2em 15px;
+    background-color: $secondary-color;
+    position: relative;
+}
+.wishitem{
+    &:first-child{
+        margin-top: 20px;
+    }
+    margin-bottom: 15px;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0px 0px 10px #c4c4c4;
+    background-color: $white-color;
+    border-radius: 5px;
+    position: relative;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    &__delete{
+        position: absolute;
+        right: 0;
+        top: 0px;
+        height: 100%;
+        width:40px;
+        background-color: $ash-color;
+        border-radius: 0px 5px 5px 0px;
+        font-size: 1.1em;
+        cursor:pointer;
+        @include flex-centered;
+    }
+    &__img{
+        max-width: 40px;
+        max-height: 40px;
+        display: inline-block;
+    }
+    &__name{
+        color: $ash-color;
+        max-width: 160px;
+        display: inline-block;
+        margin: 0;
+        font-size: 0.8em;
+        padding: 0px 10px;
+        margin-bottom: 0;
+    }
+    &__price{
+        font-weight: 600;
+        color:$black-color;
+        font-size: .8em;
+        align-self: center!important;
+        width: 60px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
