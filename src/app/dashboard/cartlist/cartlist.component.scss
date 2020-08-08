@@ -100,13 +100,15 @@ $ash-color:#A6BCD0;
     background-color: $white-color;
     box-shadow: 0px 0px 2px #c4c4c4;
     margin: 0px 4px;
+    border: none;
+    outline: none;
 }
 .control-input{
     @extend .control-btn;
     margin: 0;
-    font-size: .5em;
-    border: none;
-    outline: none;
+    font-size: .65em;
+    text-align: center;
+    color: $black-color;
 }
 @media(min-width:410px){
     .cartitem__qty{
