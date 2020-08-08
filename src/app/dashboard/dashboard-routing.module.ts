@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardPage } from './dashboard.page';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { CartlistComponent } from './cartlist/cartlist.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,14 @@ const routes: Routes = [
   },
   {
     path: 'wishlist',
+    component: WishlistComponent
+  },
+  {
+    path: 'cartlist',
+    component: CartlistComponent
+  },
+  {
+    path: 'settings',
     component: WishlistComponent
   }
 ];

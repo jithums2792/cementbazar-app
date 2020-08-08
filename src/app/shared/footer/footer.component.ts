@@ -29,7 +29,32 @@ export class FooterComponent implements OnInit {
   }
 
   async wishlist() {
-    this.router.navigateForward(['/dashboard/wishlist'])
+    try {
+      this.modalservice.dismiss({
+        'dismiss': true
+      }).catch(err => this.router.navigateForward(['/dashboard/wishlist']))
+    } catch (error) {
+      this.router.navigateForward(['/dashboard/wishlist'])
+    }
+
+  }
+  async cartlist() {
+    try {
+      this.modalservice.dismiss({
+        'dismiss': true
+      }).catch(err => this.router.navigateForward(['/dashboard/cartlist']))
+    } catch (error) {
+      this.router.navigateForward(['/dashboard/cartlist'])
+    }
+  }
+  async settings() {
+    try {
+      this.modalservice.dismiss({
+        'dismiss': true
+      }).catch(err => this.router.navigateForward(['/dashboard/settings']))
+    } catch (error) {
+      this.router.navigateForward(['/dashboard/settings'])
+    }
   }
 
 }

@@ -11,6 +11,8 @@ import { DashboardPage } from './dashboard.page';
 import { CategoryviewComponent } from './categoryview/categoryview.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductcardComponent } from '../shared/productcard/productcard.component';
+import { CartlistComponent } from './cartlist/cartlist.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   imports: [
@@ -23,6 +25,8 @@ import { ProductcardComponent } from '../shared/productcard/productcard.componen
   declarations: [DashboardPage,
                  CategoryviewComponent,
                  CategoryviewComponent,
-                 WishlistComponent]
+                 WishlistComponent,
+                 CartlistComponent,
+                 SettingsComponent]
 })
 export class DashboardPageModule {}

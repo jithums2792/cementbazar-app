@@ -9,10 +9,10 @@
      <ion-badge mode='ios' color="primary" *ngIf="wishcount > 0">{{wishcount}}</ion-badge>
    </div>
    <div class="col d-flex align-items-center justify-content-center">
-     <ion-icon class="icon-menu" slot="start" name="cart-outline"></ion-icon>
+     <ion-icon class="icon-menu" slot="start" name="cart-outline" (click)=cartlist()></ion-icon>
    </div>
    <div class="col d-flex align-items-center justify-content-center">
-     <ion-icon class="icon-menu" slot="start" name="cog-outline"></ion-icon>
+     <ion-icon class="icon-menu" slot="start" name="cog-outline" (click)=settings()></ion-icon>
    </div>
   </div>
 </div>
