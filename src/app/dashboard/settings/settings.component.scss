@@ -1,0 +1,62 @@
+$white-color:#fff;
+$black-color:#000;
+$primary-color:#019747;
+$secondary-color:#F0F4F8;
+$ash-color:#A6BCD0;
+@mixin flex-centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    @include flex-centered;
+    flex-wrap: wrap;
+    height: 95px;
+    padding: 20px;
+    margin-bottom: -20px;
+    background-color: $white-color;
+    border-radius:0px 0px 30px 30px;
+    font-size: 1em;
+    &__title{
+        text-align: center;
+        width:100%;
+        color: $black-color;
+        font-size: 1.5em;
+    }
+}
+.content{
+    min-height: 100%;
+    display: flex;
+    align-content: flex-start!important;
+    flex-wrap: wrap;
+    padding:2em 15px;
+    background-color: $secondary-color;
+    position: relative;
+}
+.menuitem{
+    &:first-child{
+        margin-top: 20px;
+    }
+    margin-bottom: 15px;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0px 0px 10px #c4c4c4;
+    background-color: $white-color;
+    color: #748A9D;
+    border-radius: 5px;
+    position: relative;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    label{
+        margin: 0;
+    }
+    &__icon{
+        max-width: 40px;
+        color: #019747;
+    }
+    &__arrow{
+        max-width: 40px;
+    }
+}

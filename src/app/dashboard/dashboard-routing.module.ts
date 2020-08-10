@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardPage } from './dashboard.page';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { CartlistComponent } from './cartlist/cartlist.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'settings',
-    component: WishlistComponent
+    component: SettingsComponent
   }
 ];
 

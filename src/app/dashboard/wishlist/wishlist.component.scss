@@ -84,3 +84,14 @@ $ash-color:#A6BCD0;
         margin-bottom: 0;
     }
 }
+@media(min-width:400px){
+    .wishitem__price{
+        position: absolute;
+        right: 50px;
+    }
+}
+@media(max-width:330px){
+    .wishitem__name{
+        max-width: 150px;
+    }
+}
