@@ -60,3 +60,67 @@ $ash-color:#A6BCD0;
         max-width: 40px;
     }
 }
+.modal-title{
+    color: #748A9D;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.account-detail{
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    .edit{
+        width: 100%;
+        text-align: right;
+        font-size: 35px;
+        color: #748A9D;
+    }
+    .detail{
+        width: 230px;
+        label{
+            margin-bottom: 0;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &__title{
+            color: #748A9D;
+            display: block;
+            width: 100%;
+        }
+        &__name{
+            color: #A6BCD0;
+        }
+    }
+}
+.order-title{
+    color:#748A9D;
+    font-size: 14px;
+    background: #F0F4F8;
+    padding: 10px;
+}
+.order-item{
+    font-size: 13px;
+    color: #748A9D;
+    width: 100%;
+    span{
+        float: right;
+    }
+}
+.order-total{
+    @extend .order-item;
+    font-weight: 500;
+    font-size: 15px;
+    span{
+        font-weight: 700;
+    }
+}
+.order-status{
+    @extend .order-item;
+    span{
+        color: $primary-color;
+    }
+}

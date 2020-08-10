@@ -5,29 +5,19 @@
 </ion-header>
 <ion-content>
   <div class="content">
-    <div class="menuitem d-flex justify-content-between">
+    <div class="menuitem d-flex justify-content-between" uk-toggle="target: #my-account">
       <label for="" class="col menuitem__icon"><ion-icon name="person"></ion-icon></label>
       <label for="" class="col menuitem__name">Your Account</label>
       <label for="" class="col menuitem__arrow">  <ion-icon name="arrow-forward"></ion-icon></label>
     </div>
-    <div class="menuitem d-flex justify-content-between">
+    <div class="menuitem d-flex justify-content-between" uk-toggle="target: #my-order">
       <label for="" class="col menuitem__icon"><ion-icon name="list"></ion-icon></label>
       <label for="" class="col menuitem__name">Your Orders</label>
       <label for="" class="col menuitem__arrow">  <ion-icon name="arrow-forward"></ion-icon></label>
     </div>
     <div class="menuitem d-flex justify-content-between">
-      <label for="" class="col menuitem__icon"> <ion-icon name="trophy"></ion-icon></label>
-      <label for="" class="col menuitem__name">Rewards</label>
-      <label for="" class="col menuitem__arrow">  <ion-icon name="arrow-forward"></ion-icon></label>
-    </div>
-    <div class="menuitem d-flex justify-content-between">
-      <label for="" class="col menuitem__icon"><ion-icon name="heart-outline"></ion-icon></label>
-      <label for="" class="col menuitem__name">WIshlist</label>
-      <label for="" class="col menuitem__arrow">  <ion-icon name="arrow-forward"></ion-icon></label>
-    </div>
-    <div class="menuitem d-flex justify-content-between">
       <label for="" class="col menuitem__icon"><ion-icon name="call"></ion-icon></label>
-      <label for="" class="col menuitem__name">Call</label>
+      <label for="" class="col menuitem__name">Help</label>
       <label for="" class="col menuitem__arrow">  <ion-icon name="arrow-forward"></ion-icon></label>
     </div>
     <div class="menuitem d-flex justify-content-between">
@@ -56,3 +46,98 @@
 <ion-footer>
   <app-footer></app-footer>
 </ion-footer>
+
+
+
+<!-- This is my account modal -->
+<div id="my-account" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <label for="" class="modal-title">Your Account</label>
+        <div class="account-detail">
+          <div class="detail">
+            <label for="" class="detail__title">Full Name</label>
+            <label for="" class="detail__name">Rahul Raghav</label>
+          </div>
+          <div class="edit">
+            <ion-icon name="create"></ion-icon>
+          </div>
+        </div>
+        <div class="account-detail">
+          <div class="detail">
+            <label for="" class="detail__title">Address</label>
+            <label for="" class="detail__name">Cholakkara Illam, Alakode, Thod..</label>
+          </div>
+          <div class="edit">
+            <ion-icon name="create"></ion-icon>
+          </div>
+        </div>
+        <div class="account-detail">
+          <div class="detail">
+            <label for="" class="detail__title">Email</label>
+            <label for="" class="detail__name">rahulraghav@gmail.com</label>
+          </div>
+          <div class="edit">
+            <ion-icon name="create"></ion-icon>
+          </div>
+        </div>
+        <div class="account-detail">
+          <div class="detail">
+            <label for="" class="detail__title">Password</label>
+            <label for="" class="detail__name">**********</label>
+          </div>
+          <div class="edit">
+            <ion-icon name="create"></ion-icon>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- This is my account modal -->
+
+<!-- This is my account modal -->
+<div id="my-order" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <label for="" class="modal-title">Your Order</label>
+    <ul uk-accordion>
+      <li class="uk-open">
+          <a class="uk-accordion-title order-title" href="#">Order 1</a>
+          <div class="uk-accordion-content">
+              <label class="order-item" for="">Penna Premium Cement <span>355 (2nos)</span></label>
+              <label class="order-item" for="">Birla Shakti 43 Cement <span>389</span></label>
+              <label class="order-item" for="">Zuari 43 Grade Cement <span>389</span></label>
+              <label class="order-item" for="">Bharathi 4Grade Cement <span>399</span></label>
+              <label class="order-item" for="">Delivery <span>40</span></label>
+              <hr class="mt-1 mb-2">
+              <label class="order-total" for="">Total <span>399</span></label>
+              <label class="order-status" for="">Status <span>Shipped</span></label>
+          </div>
+      </li>
+      <li>
+          <a class="uk-accordion-title order-title" href="#">Order 2</a>
+          <div class="uk-accordion-content">
+            <label class="order-item" for="">Penna Premium Cement <span>355 (2nos)</span></label>
+            <label class="order-item" for="">Birla Shakti 43 Cement <span>389</span></label>
+            <label class="order-item" for="">Zuari 43 Grade Cement <span>389</span></label>
+            <label class="order-item" for="">Bharathi 4Grade Cement <span>399</span></label>
+            <label class="order-item" for="">Delivery <span>40</span></label>
+            <hr class="mt-1 mb-2">
+            <label class="order-total" for="">Total <span>399</span></label>
+            <label class="order-status" for="">Status <span>Packed</span></label>
+          </div>
+      </li>
+      <li>
+          <a class="uk-accordion-title order-title" href="#">Order 3</a>
+          <div class="uk-accordion-content">
+            <label class="order-item" for="">Penna Premium Cement <span>355 (2nos)</span></label>
+            <label class="order-item" for="">Birla Shakti 43 Cement <span>389</span></label>
+            <label class="order-item" for="">Zuari 43 Grade Cement <span>389</span></label>
+            <label class="order-item" for="">Bharathi 4Grade Cement <span>399</span></label>
+            <label class="order-item" for="">Delivery <span>40</span></label>
+            <hr class="mt-1 mb-2">
+            <label class="order-total" for="">Total <span>399</span></label>
+            <label class="order-status" for="">Status <span>Out for delivery</span></label>
+          </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- This is my account modal -->
