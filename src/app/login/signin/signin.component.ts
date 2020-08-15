@@ -11,7 +11,8 @@ import { ToastController, NavController } from '@ionic/angular';
 export class SigninComponent implements OnInit {
   public loginForm = new FormGroup({
     email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+    password: new FormControl('', Validators.required),
+    scope: new FormControl('user')
   })
 
   constructor(private userservice: UserService,

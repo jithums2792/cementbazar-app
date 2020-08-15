@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
-import { ToastController } from '@ionic/angular';
+import { ToastController, ModalController } from '@ionic/angular';
+import { CheckoutComponent } from '../checkout/checkout.component'
 
 @Component({
   selector: 'app-cartlist',
@@ -15,6 +16,7 @@ export class CartlistComponent implements OnInit {
 
   constructor(private cartservice: CartService,
               private toastservice: ToastController,
+              private modalservice: ModalController,
               private productservice: ProductService) { }
 
   ngOnInit() {
@@ -85,6 +87,13 @@ export class CartlistComponent implements OnInit {
           this.getcartlist()
         }
       })
+  }
+
+  async checkout() {
+    const modal = this.modalservice.create({
+      component: CheckoutComponent
+    })
+    await (await modal).present()
   }
 
 }

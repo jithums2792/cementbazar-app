@@ -13,6 +13,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductcardComponent } from '../shared/productcard/productcard.component';
 import { CartlistComponent } from './cartlist/cartlist.component';
 import { SettingsComponent } from './settings/settings.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { SettingsComponent } from './settings/settings.component';
                  CategoryviewComponent,
                  WishlistComponent,
                  CartlistComponent,
+                 CheckoutComponent,
                  SettingsComponent]
 })
 export class DashboardPageModule {}
