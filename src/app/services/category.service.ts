@@ -16,6 +16,6 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
   getAllCategory():Observable<any> {
-    return this.http.get(this.api+'category/all');
+    return this.http.get(this.api+'category/all?filter[status]=true');
   }
 }

@@ -4,11 +4,11 @@
       <form action="">
         <span class="mb-3 txt-light">Reset Password</span>
         <div class="position-relative">
-          <input type="text" placeholder="Email" class="pl-5 form-control mb-3 panda-light">
+          <input #email type="email" placeholder="Email" class="pl-5 form-control mb-3 panda-light">
           <ion-icon slot="start" name="mail-outline" class="form-icon position-absolute"></ion-icon>
         </div>
       </form>
-      <ion-button  class="btn-custom position-absolute w-75" shape="round">
+      <ion-button  class="btn-custom position-absolute w-75" shape="round" (click)="reset(email)">
         <ion-icon slot="start" name="arrow-forward-outline"></ion-icon>
         SEND RESET LINK
       </ion-button>

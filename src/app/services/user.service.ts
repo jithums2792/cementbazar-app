@@ -25,15 +25,18 @@ export class UserService {
     this.wishlist.next(count)
   }
 
-  getUser(): Observable<any> {
-    return this.http.get(this.api)
+  getUserbyid(id): Observable<any> {
+    return this.http.get(this.api+'users/'+id)
   }
 
 
   register(data):Observable<any> {
-    return this.http.post(this.api+`users/register`,data);
+    return this.http.post(this.api+`users/register`,data)
   }
   login(data):Observable<any> {
-    return this.http.post(this.api+`users/login`,data);
+    return this.http.post(this.api+`users/login`,data)
+  }
+  forget(data):Observable<any> {
+    return this.http.post(this.api+'users/reset',data)
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { ProductComponent } from '../../dashboard/product/product.component'
-import { UserService } from 'src/app/services/user.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-productcard',
@@ -11,18 +11,23 @@ import { UserService } from 'src/app/services/user.service';
 export class ProductcardComponent implements OnInit {
   @Input() data
   flag = false
-  user
+  public wishlist = []
 
   constructor(private modalservice: ModalController,
-              private userservice: UserService) { }
+              private toastservice: ToastController,
+              private wishservice: WishlistService) { }
 
   ngOnInit() {
-    this.getuser()
+    this.getwishlist()
   }
 
-  async getuser() {
-    this.user = await this.userservice.getUser()
-    this.check()
+  async getwishlist() {
+    if(localStorage.getItem('userid')) {
+      this.wishservice.getwishlistByid(localStorage.getItem('userid')).subscribe(data => {
+        this.wishlist = data.data[0].items
+        this.check()
+      })
+    }
   }
 
   async openproduct() {
@@ -34,20 +39,61 @@ export class ProductcardComponent implements OnInit {
   }
 
   async addtowishlist() {
-    this.user.wishlist.push(this.data.id)
-    this.userservice.updatewislistcount(this.user.wishlist.length)
-    this.check()
+    if(localStorage.getItem('userid')) {
+      this.wishlist.push(this.data._id)
+      this.wishservice.updatewishlist(localStorage.getItem('userid'),{
+        wishlist: {
+          items: this.wishlist
+        }
+      }).subscribe(async data => {
+        if(data.status === 'success') {
+          const toast = await this.toastservice.create({
+            message: 'Added to wishlist',
+            duration: 1000,
+            mode: 'ios',
+            position: 'top'
+          })
+          await toast.present()
+          this.wishservice.updatewislistcount(this.wishlist.length)
+          this.check()
+        }
+      })
+    } else {
+      const toast = await this.toastservice.create({
+        message: 'Login to add as wish Item',
+        duration: 2000,
+        mode: 'ios',
+        position: 'top'
+      })
+      await toast.present()
+    }
   }
   async removefromwishlist() {
-    const index = await this.user.wishlist.indexOf(this.data.id)
-    this.user.wishlist.splice(index, 1)
-    this.userservice.updatewislistcount(this.user.wishlist.length)
-    this.flag = false
+    const index = await this.wishlist.indexOf(this.data.id)
+    this.wishlist.splice(index, 1)
+    this.wishservice.updatewishlist(localStorage.getItem('userid'),{
+      wishlist: {
+        items: this.wishlist
+      }
+    }).subscribe(async data => {
+      if(data.status === 'success') {
+        const toast = await this.toastservice.create({
+          message: 'removed from wishlist',
+          duration: 1000,
+          mode: 'ios',
+          position: 'top'
+        })
+        await toast.present()
+        this.wishservice.updatewislistcount(this.wishlist.length)
+        this.flag = false
+        this.check()
+      }
+    }) 
   }
 
   check() {
-    this.user.wishlist.map(item => {
-      if(item === this.data.id) {
+    this.wishlist.map(item => {
+      if(item === this.data._id) {
         this.flag = true
       } else {
         this.flag = false

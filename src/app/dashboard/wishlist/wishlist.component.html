@@ -5,28 +5,12 @@
 </ion-header>
 <ion-content>
   <div class="content">
-    <div class="wishitem">
-      <img class="wishitem__img" src="../../../assets/img/6580049_preview.png" alt="">
-      <label for="" class="wishitem__name text-truncate">Penna Premium Cement</label>
-      <label for="" class="wishitem__price">355</label>
+    <div class="wishitem" *ngFor="let product of productList">
+      <img class="wishitem__img" [src]="product.featuredImage" alt="{{product.name}}">
+      <label for="" class="wishitem__name text-truncate">{{product.name}}</label>
+      <label for="" class="wishitem__price">₹ {{product.price - product.discountPrice}}</label>
       <div class="wishitem__delete">
-        <ion-icon name="trash"></ion-icon>
-      </div>
-    </div>
-    <div class="wishitem">
-      <img class="wishitem__img" src="../../../assets/img/6580049_preview.png" alt="">
-      <label for="" class="wishitem__name text-truncate">Penna Premium Cement</label>
-      <label for="" class="wishitem__price">355</label>
-      <div class="wishitem__delete">
-        <ion-icon name="trash"></ion-icon>
-      </div>
-    </div>
-    <div class="wishitem">
-      <img class="wishitem__img" src="../../../assets/img/6580049_preview.png" alt="">
-      <label for="" class="wishitem__name text-truncate">Penna Premium Cement</label>
-      <label for="" class="wishitem__price">355</label>
-      <div class="wishitem__delete">
-        <ion-icon name="trash"></ion-icon>
+        <ion-icon name="trash" (click)="delete(product._id)"></ion-icon>
       </div>
     </div>
   </div>

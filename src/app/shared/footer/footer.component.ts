@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
-import { UserService } from 'src/app/services/user.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,14 +10,36 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class FooterComponent implements OnInit {
   public wishcount = 0
+  public cartcount = 0
 
   constructor(private modalservice: ModalController,
-              private userservice: UserService,
+              private wishservice: WishlistService,
+              private cartservice: CartService,
               private router: NavController) { 
-                 userservice.getWishlistcount().subscribe(data => this.wishcount = data)
+                wishservice.getWishlistcount().subscribe(data => this.wishcount = data)
+                cartservice.getcartcount().subscribe(data => this.cartcount = data)
               }
 
-  ngOnInit() {}
+  ngOnInit() {
+   this.getwishlist() 
+   this.getcartlist()
+  }
+  
+  getwishlist() {
+    if(localStorage.getItem('userid')) {
+      this.wishservice.getwishlistByid(localStorage.getItem('userid')).subscribe(data => {
+        this.wishservice.updatewislistcount(data.data[0].items.length)
+      })
+    }
+  }
+
+  getcartlist() {
+    if(localStorage.getItem('userid')) {
+      this.cartservice.getcartByid(localStorage.getItem('userid')).subscribe(data => {
+        this.cartservice.updatecartcount(data.data[0].items.length)
+      })
+    }
+  }
 
   async home() {
     try {
@@ -32,7 +55,9 @@ export class FooterComponent implements OnInit {
     try {
       this.modalservice.dismiss({
         'dismiss': true
-      }).catch(err => this.router.navigateForward(['/dashboard/wishlist']))
+      }
+      ).catch(err => this.router.navigateForward(['/dashboard/wishlist']))
+      this.router.navigateForward(['/dashboard/wishlist'])
     } catch (error) {
       this.router.navigateForward(['/dashboard/wishlist'])
     }
@@ -43,6 +68,7 @@ export class FooterComponent implements OnInit {
       this.modalservice.dismiss({
         'dismiss': true
       }).catch(err => this.router.navigateForward(['/dashboard/cartlist']))
+      this.router.navigateForward(['/dashboard/cartlist'])
     } catch (error) {
       this.router.navigateForward(['/dashboard/cartlist'])
     }
@@ -52,6 +78,7 @@ export class FooterComponent implements OnInit {
       this.modalservice.dismiss({
         'dismiss': true
       }).catch(err => this.router.navigateForward(['/dashboard/settings']))
+      this.router.navigateForward(['/dashboard/settings'])
     } catch (error) {
       this.router.navigateForward(['/dashboard/settings'])
     }

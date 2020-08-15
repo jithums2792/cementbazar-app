@@ -31,6 +31,14 @@ export class SigninComponent implements OnInit {
         })
         await toast.present()
         this.router.navigateForward(['/dashboard'])
+      }, async err => {
+        const toast = await this.toastservice.create({
+          message: err.error.message,
+          duration:2000,
+          mode: 'ios',
+          position: 'top'
+        })
+        await toast.present()
       })
     } else {
       const toast = await this.toastservice.create({

@@ -5,6 +5,7 @@ import { DashboardPage } from './dashboard.page';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { CartlistComponent } from './cartlist/cartlist.component';
 import { SettingsComponent } from './settings/settings.component';
+import { LoginGuard } from '../Auth/login.guard';
 
 const routes: Routes = [
   {
@@ -13,15 +14,18 @@ const routes: Routes = [
   },
   {
     path: 'wishlist',
-    component: WishlistComponent
+    component: WishlistComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'cartlist',
-    component: CartlistComponent
+    component: CartlistComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'settings',
-    component: SettingsComponent
+    component: SettingsComponent,
+    canActivate: [LoginGuard]
   }
 ];
 

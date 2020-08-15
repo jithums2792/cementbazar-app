@@ -8,33 +8,11 @@ import { ForgetComponent } from './forget/forget.component';
 import { OtpComponent } from './otp/otp.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LoginPage,
-    children: [
-      {
-        path: '',
-        redirectTo: 'signin',
-        pathMatch: 'full'
-      },
-      {
-        path: 'signin',
-        component: SigninComponent
-      },
-      {
-        path: 'signup',
-        component: SignupComponent
-      },
-      {
-        path: 'forget',
-        component: ForgetComponent
-      },
-      {
-        path: 'otp',
-        component: OtpComponent
-      },
-    ]
-  }, 
+  {path: 'signin', component: SigninComponent},
+  {path: 'signup', component: SignupComponent},
+  {path: 'forget', component: ForgetComponent},
+  {path: 'otp', component: OtpComponent},
+  {path: '', redirectTo: 'signin', pathMatch: 'full'},
 ];
 
 @NgModule({

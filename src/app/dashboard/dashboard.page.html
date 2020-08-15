@@ -10,15 +10,10 @@
         <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>
 
           <ul class="uk-slideshow-items">
-              <li>
-                  <img src="../../../assets/img/photo.jpg" alt="" uk-cover>
+              <li *ngFor="let banner of bannerList">
+                  <img [src]="banner.image" alt="" uk-cover>
               </li>
-              <li>
-                  <img src="../../../assets/img/dark.jpg" alt="" uk-cover>
-              </li>
-              <li>
-                  <img src="../../../assets/img/light.jpg" alt="" uk-cover>
-              </li>
+              
           </ul>
       
           <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
@@ -37,7 +32,7 @@
         <ul class="uk-switcher uk-margin">
           <li>
             <div class="container-fluid">
-              <div class="row">
+              <div class="row" *ngIf="!loader">
                 <div class="col-6 mb-2" *ngFor="let item of categoryList">
                   <div class="card border-lg shadow-sm" (click)="opencategory(item)">
                     <img [src]="item.icon" class="img-fluid img-custom" alt="">
@@ -45,6 +40,12 @@
                       <span class="text-truncate w-100 d-block">{{item.name}}</span>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div class="row vh-27" *ngIf="loader">
+                <div class="col-12 h-100 d-flex flex-column justify-content-center align-items-center">
+                  <div uk-spinner></div>
+                  <span>Please wait..!</span>
                 </div>
               </div>
             </div>

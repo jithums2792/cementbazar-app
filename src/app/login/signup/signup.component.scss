@@ -1,8 +1,5 @@
 .btn-custom{
-    bottom: 20px;
     min-height: 50px;
-    left: 50%;
-    transform: translateX(-50%)
 }
 .custom-card{
     border-radius: 0px 0px 25px 25px;
@@ -25,4 +22,13 @@
 }
 .form-control:focus{
     box-shadow: none !important;
+}
+.dark{
+    background-color: black;
+    color: white;
+}
+.logo-alt{
+    color: yellow;
+    font-size: 26px;
+    font-weight: 600; 
 }

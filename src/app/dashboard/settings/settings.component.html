@@ -35,7 +35,7 @@
       <label for="" class="col menuitem__name">About Us</label>
       <label for="" class="col menuitem__arrow">  <ion-icon name="arrow-forward"></ion-icon></label>
     </div>
-    <div class="menuitem d-flex justify-content-between">
+    <div class="menuitem d-flex justify-content-between" (click)="logout()">
       <label for="" class="col menuitem__icon"><ion-icon name="power"></ion-icon></label>
       <label for="" class="col menuitem__name">Sign Out</label>
       <label for="" class="col menuitem__arrow">  <ion-icon name="arrow-forward"></ion-icon></label>
@@ -50,13 +50,13 @@
 
 
 <!-- This is my account modal -->
-<div id="my-account" uk-modal>
+<div id="my-account" uk-modal *ngIf="user">
     <div class="uk-modal-dialog uk-modal-body">
         <label for="" class="modal-title">Your Account</label>
         <div class="account-detail">
           <div class="detail">
             <label for="" class="detail__title">Full Name</label>
-            <label for="" class="detail__name">Rahul Raghav</label>
+            <label for="" class="detail__name">{{user.fname}} {{user.lname}}</label>
           </div>
           <div class="edit">
             <ion-icon name="create"></ion-icon>
@@ -74,16 +74,7 @@
         <div class="account-detail">
           <div class="detail">
             <label for="" class="detail__title">Email</label>
-            <label for="" class="detail__name">rahulraghav@gmail.com</label>
-          </div>
-          <div class="edit">
-            <ion-icon name="create"></ion-icon>
-          </div>
-        </div>
-        <div class="account-detail">
-          <div class="detail">
-            <label for="" class="detail__title">Password</label>
-            <label for="" class="detail__name">**********</label>
+            <label for="" class="detail__name">{{user.email}}</label>
           </div>
           <div class="edit">
             <ion-icon name="create"></ion-icon>

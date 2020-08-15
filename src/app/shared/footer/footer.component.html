@@ -10,6 +10,7 @@
    </div>
    <div class="col d-flex align-items-center justify-content-center">
      <ion-icon class="icon-menu" slot="start" name="cart-outline" (click)=cartlist()></ion-icon>
+     <ion-badge mode='ios' color="primary" *ngIf="cartcount > 0">{{cartcount}}</ion-badge>
    </div>
    <div class="col d-flex align-items-center justify-content-center">
      <ion-icon class="icon-menu" slot="start" name="cog-outline" (click)=settings()></ion-icon>

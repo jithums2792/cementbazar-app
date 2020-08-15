@@ -29,16 +29,16 @@
           <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
       </div>
       </div>
-      <div class="col-12">
+      <div class="col-12 my-2">
         <div class="custom-card py-3 d-flex align-items-center justify-content-between">
           <span class="text-truncate col">{{data.name}}</span>
           <div class=" col d-flex align-items-center justify-content-between">
-            <ion-icon name="remove-circle" class="btn-custom"></ion-icon>
-            <input type="number" class="custom-input" value="1">
-            <ion-icon name="add-circle" class="btn-custom"></ion-icon>
+            <ion-icon name="add-circle" class="btn-custom" (click)="add()"></ion-icon>
+            <input [(ngModel)]="product.item_qty" min="1" type="number" class="custom-input" value="1">
+            <ion-icon name="remove-circle" class="btn-custom" (click)="remove()"></ion-icon>
           </div>
           <span class="col">
-            Rs. 399
+            Rs. {{(data.price - data.discountPrice)*product.item_qty}}
           </span>
         </div>
       </div>
