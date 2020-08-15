@@ -1,4 +1,110 @@
-<ion-button (click)="close()">
-  <ion-icon slot="start" name="add"></ion-icon>
-  Click me
-</ion-button>
+<ion-header translucent="true">
+  <div class="header">
+    <div class="col-12 d-flex align-items-center justify-content-center"><ion-icon name="arrow-back" (click)="close()"></ion-icon><label for="" class="header__title mb-0">Delivery Address</label></div>
+  </div>
+</ion-header>
+<ion-content>
+  <div class="content">
+    <ul class="uk-subnav uk-subnav-pill checkout-menu" uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
+      <li><a href="#"><ion-icon name="location-outline"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="car-outline"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="card-outline"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="flag-outline"></ion-icon></a></li>
+    </ul>
+    <ul class="uk-switcher uk-margin checkout-content">
+      <li>
+        <form class="delivery">
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Address"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="city">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="District">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ZIP Code">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone">
+          </div>
+          <ion-button class="mt-5" expand="block" shape="round"><span class="mr-3">Order Summary</span></ion-button>
+        </form>
+      </li>
+      <li>
+        <label for="" class="title mb-3">Order summary</label>
+        <div class="table d-flex flex-wrap align-items-center mb-3">
+          <div class="col-12 table__head d-flex px-0 border-bottom mb-3">
+            <label class="col-6 px-0">Item</label>
+            <label class="col-3 text-center px-0">Qty</label>
+            <label class="col-3 text-center px-0">Price</label>
+          </div>
+          <div class="col-12 table__item px-0">
+            <label class="col-6 px-0">Aultra Cement</label>
+            <label class="col-3 text-center px-0">1</label>
+            <label class="col-3 text-center px-0">500</label>
+          </div>
+          <div class="col-12 table__item px-0 border-bottom mb-3">
+            <label class="col-6 px-0">Aultra Cement</label>
+            <label class="col-3 text-center px-0">1</label>
+            <label class="col-3 text-center px-0">500</label>
+          </div>
+          <div class="col-12 table__delivery px-0">
+            <label class="col-9 px-0">Delivery charge</label>
+            <label class="col-3 text-center px-0">50</label>
+          </div>
+          <div class="col-12 table__total px-0">
+            <label class="col-9 px-0">Total</label>
+            <label class="col-3 text-center px-0">1050</label>
+          </div>
+          <label for="" class="title my-3">Delivery Address</label>
+          <label for="" class="address">
+            Keas 69 Str.
+            15234, Chalandri
+            Athens,
+            Greece
+          </label>
+        </div>
+        <ion-button class="mt-5" expand="block" shape="round"><span class="mr-3">Payment Details</span></ion-button>
+      </li>
+      <li>
+        <label for="" class="payment-price mb-4">Pay  1050</label>
+        <label for="" class="title my-3">Choose delivery Option</label>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1000" value="option1000" checked>
+          <label class="form-check-label" for="exampleRadios1000">
+            Cash on delivery
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2000" value="option2000">
+          <label class="form-check-label" for="exampleRadios2000">
+            Credit card
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3000" value="option3000" checked>
+          <label class="form-check-label" for="exampleRadios3000">
+            Emi
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4000" value="option4000">
+          <label class="form-check-label" for="exampleRadios4000">
+            Patm
+          </label>
+        </div>
+        <ion-button class="mt-5" expand="block" shape="round"><span class="mr-3">Proceed To Pay</span></ion-button>
+      </li>
+      <li>
+        <label for="" class="payment-price mb-4">Success</label>
+        <img src="../../../assets/img/success.png" alt="">
+        <ion-button class="mt-5" expand="block" shape="round"><span class="mr-3">Back to home</span></ion-button>
+      </li>
+    </ul>
+  </div>
+</ion-content>

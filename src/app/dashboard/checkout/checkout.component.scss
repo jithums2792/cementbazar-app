@@ -1,0 +1,100 @@
+$white-color:#fff;
+$black-color:#000;
+$primary-color:#019747;
+$secondary-color:#F0F4F8;
+$ash-color:#A6BCD0;
+@mixin flex-centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    @include flex-centered;
+    flex-wrap: wrap;
+    height: 95px;
+    padding: 20px;
+    margin-bottom: -20px;
+    background-color: $white-color;
+    border-radius:0px 0px 30px 30px;
+    font-size: 1em;
+    ion-icon{
+        color: $primary-color;
+        font-size: 20px
+    }
+    &__title{
+        text-align: center;
+        width:100%;
+        color: $black-color;
+        font-size: 1.5em;
+    }
+}
+.content{
+    min-height: 100%;
+    display: flex;
+    align-content: flex-start!important;
+    flex-wrap: wrap;
+    padding:2em 15px;
+    background-color: $secondary-color;
+    position: relative;
+}
+.checkout-menu{
+    width:100%;
+    margin: auto;
+    @include flex-centered();
+    li{padding: 0;
+        a{  
+            
+            height: 40px;
+            width: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            font-size: 23px;
+        }
+    }
+    li.uk-active{
+        a{
+            background: $primary-color;
+        }
+    }
+}
+.checkout-content{
+    width:100%;
+    padding-top: 20px;
+    .title{
+        color: #748A9D;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+}
+.form-group{
+    width: 100%;
+    .form-control{
+        width: 100%;
+        height: 45px;
+        background: #F0F4F8;
+        color: #748A9D;
+        outline:none;
+        box-shadow: none;
+    }
+}
+.table{
+    &__head{
+        color: #B4B4B4
+    }
+    &__item{
+        font-weight: 500;
+    }
+    &__total{
+        color: $primary-color;
+        font-weight: 500;
+    }
+}
+.payment-price{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    color: $primary-color;
+}
